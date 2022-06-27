@@ -1,7 +1,6 @@
 package com.packages.mongoDatabase.persona.infraestructure.controller;
 
 import com.packages.mongoDatabase.persona.application.Port.PersonaServiceInterface;
-import com.packages.mongoDatabase.persona.domain.Persona;
 import com.packages.mongoDatabase.persona.infraestructure.dtopersona.PersonaDTOinput;
 import com.packages.mongoDatabase.persona.infraestructure.dtopersona.PersonaDTOoutput;
 import org.modelmapper.ModelMapper;
@@ -11,11 +10,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("persona")
-public class Controller {
+public class PersonaController {
     @Autowired
     private PersonaServiceInterface personaService;
     @Autowired
