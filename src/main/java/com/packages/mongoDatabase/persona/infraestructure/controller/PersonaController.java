@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("persona")
+@RequestMapping("/persona")
 public class PersonaController {
     @Autowired
     private PersonaServiceInterface personaService;
@@ -37,7 +37,7 @@ public class PersonaController {
     }
 
     @DeleteMapping("/{id}")
-    public Map<String, String> deletePersona(@PathVariable String id) {
+    public Map<String, String> deletePersonaa(@PathVariable String id) {
         return personaService.delete(id);
     }
 }

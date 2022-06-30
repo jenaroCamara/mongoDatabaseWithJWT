@@ -12,6 +12,7 @@ import java.util.Map;
 
 @RestController
 @CrossOrigin()
+@RequestMapping("/H")
 public class HelloWorldController {
 
 	@Autowired
@@ -23,19 +24,22 @@ public class HelloWorldController {
 	}
 
 	@PostMapping(name = "/persona",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping({"/persona"})
 	public PersonaDTOoutput guardarPersona(@RequestBody PersonaDTOinput persona) {
 
 		return personaController.guardarPersona(persona);
 	}
 
 	@PutMapping(name = "/persona",consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping({"/persona"})
 	public PersonaDTOoutput actualizaPersona(@RequestBody PersonaDTOinput persona) {
 
 		return personaController.actualizaPersona(persona);
 	}
 
 	@DeleteMapping("/persona/{id}")
+	@RequestMapping({"/persona"})
 	public Map<String, String> deletePersona(@PathVariable String id) {
-		return personaController.deletePersona(id);
+		return personaController.deletePersonaa(id);
 	}
 }
