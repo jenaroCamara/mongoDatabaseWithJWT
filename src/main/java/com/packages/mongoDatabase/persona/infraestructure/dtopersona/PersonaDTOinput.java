@@ -18,4 +18,5 @@ public class PersonaDTOinput {
     Date created_date;
     String imagen_url;
     Date termination_date;
+    boolean admin;
 }

@@ -1,9 +1,11 @@
 package com.packages.mongoDatabase.persona.infraestructure.repository;
 
 import com.packages.mongoDatabase.persona.domain.Persona;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
-@Repository
-public interface PersonaRepository extends MongoRepository<Persona, String> {
+@Component
+public interface PersonaRepository extends JpaRepository<Persona, Integer> {
+    Persona findByName(String name);
 }
